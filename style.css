@@ -1,0 +1,247 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+    position: relative;
+    max-width: 700px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    margin: auto;
+    background-color: rgb(220, 208, 192);
+    font-family: 'Josefin Sans', sans-serif
+
+} 
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 2px;
+  margin: 2px;
+}
+
+.grid{
+  position: relative;
+  background-color: #F3F2F3;
+  max-width: 550px;
+  max-height: 550px;
+  min-width: 330px;
+  min-height: 330px;
+  margin:7px;
+  padding: 2px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content:space-around;
+  background-Color : rgb(227, 213, 122);
+  transition: all 1s;
+  
+}
+
+.square{
+  background-color: #00AEB9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin: 5px; 
+  cursor: pointer;
+  font-size: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 10%;
+  border-radius: 15%;
+  transition: all 1s ;
+  
+}
+
+
+.square:hover {
+  background-color: #56ced7;
+}
+
+
+  .taken {
+    pointer-events: none;
+  }
+
+  .pop-up {
+    z-index: 9999;
+    position: absolute;
+    visibility: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    font-size: 50px;
+    border-radius: 30px ;
+    background-color: rgb(193, 185, 73);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    opacity: 0.9;
+    transition: all 2s;
+    font-family: 'Josefin Sans', sans-serif
+}
+
+
+  .result{
+    width:55%;
+    min-width: 330px;
+    background-Color : rgb(227, 213, 122);
+    margin:7px  10%;
+    padding: 8px;
+    border-radius: 5px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content:space-around;
+    text-align: center;
+  }
+
+  .display {
+    opacity: 1;
+    font-size: 30px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px, rgba(0, 0, 0, 0.22) 0px 2px 2px;
+   border-radius: 10px;
+   transition: opacity 1s ease;
+}
+
+.display2 {
+    margin: 2px;
+    padding: 3px;
+     display: block;
+     position: relative;
+     top: 29%;
+     left: 3%;
+     font-size: 20px;
+    
+ }
+
+ .fa-skull {
+  color: black;
+ 
+ }
+
+ .fa-user {
+  color: rgb(112, 74, 31);
+  
+ }
+
+ .winingSquare {
+    background-color: rgb(21, 213, 56);
+}
+ 
+
+
+p {
+  position: absolute;
+  text-align: center;
+  background-color: rgb(220, 208, 192);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  color: rgb(112, 74, 31);
+  border-radius: 10px ;
+  opacity: 0.8;
+  width: fit-content;
+  font-size: 30px;
+  padding: 3px;
+  }
+
+  .btn {
+    display: block;
+    position: relative;
+    background-color: rgb(220, 208, 192);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    top: 25%;
+    width: fit-content;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(73, 72, 72);
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 10px ;
+    font-family: 'Lato', sans-serif
+}
+
+
+.btn:hover{
+    background-color: rgb(103, 85, 21);
+    color: beige;
+
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.card {
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  animation: zoomIn .1s ease-in;
+}
+
+
+.fade {
+  transform: scale(0);
+  
+}
+
+.player-time {
+  animation: anim-popoutin 1s ;
+}
+
+@keyframes anim-popoutin {
+  0% {
+    color: black;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    color: rgb(112, 74, 31);
+    transform: scale(1.5);
+    opacity: 1;
+    text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    color: black;
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    /* animate nothing to add pause at the end of animation */
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  25%{opacity: 1;}
+  50% {opacity: 0;}
+  75% {opacity: 1;}
+  100% {opacity: 0;}
+
+}
+
+
+
