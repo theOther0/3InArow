@@ -340,7 +340,7 @@ function readStorage(){
 
     playerTimeLeft =4;
     PlayerTimeLeftText.style.animationIterationCount = "infinite";
-    playerTimerId = setInterval(playerTimeLeft,1000);
+    playerTimerId = setInterval(playerTimeCounter,1000);
 
    }
 
