@@ -166,7 +166,7 @@ function readStorage(){
     } else if(currentPlayer ==2){
      setTimeout(()=> {
       popUp.innerHTML ="";
-      turnText.textContent = "Computer Turn";
+      turnText.innerHTML = "<i class=\"fas fa-skull\"></i>";
       computerTurn()},2100) ;
     }
    }, 3000)
